@@ -38,7 +38,7 @@ public class heap {
 				MAX_HEAPIFY(a,maxId,length);
 
 			}
-					}
+		}
 		else if(left<length){
 			if(max<a[left])
 			{
@@ -59,7 +59,6 @@ public class heap {
 		
 	}
 	private void swap(int[] a, int maxId, int i) {
-		// TODO Auto-generated method stub
 		int tmp=a[maxId];
 		a[maxId]=a[i];
 		a[i]=tmp;
