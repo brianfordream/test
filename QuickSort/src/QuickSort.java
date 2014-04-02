@@ -1,6 +1,4 @@
 import java.util.Random;
-
-
 public class QuickSort {
 	public int partition(int a[],int begin,int end){ //快速排序的非随机化版本
 		int i=begin-1;
