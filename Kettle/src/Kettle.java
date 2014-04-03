@@ -1,3 +1,8 @@
+/**
+ *  假设给了你n个红色的水壶和n个蓝色的水壶，他们的形状和尺寸都各不相同，所有的红色水壶中所盛的水都不一样多
+ *  蓝色水壶也是如此。而且，对于一个红色水壶来说，都有一个对应的蓝色水壶，两者盛有一样的水
+ *  任务是找出所有所盛水量一样多的红色水壶和蓝色水壶，配成一对，不能直接比较两个红色或者蓝色的水壶。
+ */
 import java.util.Random;
 public class Kettle {
 	private int capacity;
@@ -15,6 +20,7 @@ public class Kettle {
 				i++;
 				swap(kettleB,i,j);
 			}
+			
 		}
 		for(int m=i+1;m<=end;m++){
 			if(kettleB[m].capacity==kettleA.capacity)
@@ -38,13 +44,13 @@ public class Kettle {
 		//	System.out.println(kettleA[random].capacity==kettleB[partitionB].capacity);
 			int partitionA=partition(kettleA,begin,end,kettleB[partitionB]);
 			System.out.println(kettleA[partitionA].num+"="+kettleB[partitionB].num);
-			sort(kettleA,kettleB,begin,random-1);
-			sort(kettleA,kettleB,random+1,end);
+			sort(kettleA,kettleB,begin,partitionB-1);
+			sort(kettleA,kettleB,partitionB+1,end);
 		}
 	}
 	public static void main(String args[]){
-		int[] a={1,2,5,12,32,43,54,23};
-		int[] b={23,2,1,5,12,54,43,32};
+		int[] a={32,54,23,1,43,35};
+		int[] b={23,54,32,35,43,1};
 		Kettle[] kettleA=new Kettle[a.length];
 		Kettle[] kettleB=new Kettle[b.length];
 		for(int i=0;i<a.length;i++){
